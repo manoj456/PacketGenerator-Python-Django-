@@ -1,0 +1,14 @@
+<!--  Html form dealing with upload pcap option 
+-->
+<html>
+<body style="background-color:#006666">
+<form method="post" enctype="multipart/form-data" action="upload">
+{% csrf_token %}
+  <br>  <p><b><u>INSTRUCTIONS TO UPLOAD PCAP FILE</u><br><br>1.Upload your valid cap file to repository<br><br>2.Make sure you dont use the pcap names that are already existing in the repository</b></p><br>
+    <input type="file" name="myfile" />
+    <input type="submit" name="submit" value="Upload" />
+</form>
+<br>
+<b><span style="color:#731D1D;">{{ fileUploaded }}</span></b>
+</body>
+</html>

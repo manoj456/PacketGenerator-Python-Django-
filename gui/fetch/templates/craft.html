@@ -1,0 +1,305 @@
+<!-- 	File owner : Manoj Tammali
+	Description : Form taking input from user regarding crafting pcap option
+-->
+<html>
+<head>
+<script src="{{ STATIC_URL }}/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+        
+        $('#layer4').off('click').on('click',function(e) {
+                $('#div1').show();
+                $('#div2').hide();
+                $('#div3').hide();
+                $('#div4').hide();
+                $('#div5').hide();
+		$('#div6').hide();
+		$('#div7').hide();
+		$('#div8').hide();		
+        });
+
+	$('#layer3').off('click').on('click',function(e) {
+                $('#div1').hide();
+                $('#div2').show();
+                $('#div3').hide();
+                $('#div4').hide();
+                $('#div5').hide();
+		$('#div6').hide();
+		$('#div7').hide();
+		$('#div8').hide();		
+        });
+	$('#layer2').off('click').on('click',function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').show();
+                $('#div4').hide();
+                $('#div5').hide();
+		$('#div6').hide();
+		$('#div7').hide();
+		$('#div8').hide();		
+        });
+	
+	$('#ip4').click(function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+                $('#div4').hide();
+                $('#div5').hide();
+		$('#div6').hide();
+		
+		$('#div8').hide();
+		$('#id_b').val('ip4');
+		$('form#7').find('#id_packets_count').val('1000');
+		$('form#7').find('#id_srcmac_ether').val('00:50:56:01:02:03');
+		$('form#7').find('#id_dstmac_ether').val('00:50:56:04:05:06');
+		$('form#7').find('#id_src_ip').val('192.168.10.10');
+		$('form#7').find('#id_dst_ip').val('192.168.10.20');
+		$('form#7').find('#id_ihl_ip').val('5');
+		$('form#7').find('#id_len_ip').val('20');
+		$('form#7').find('#id_proto_ip').val('0');
+		$('form#7').find('#id_version_ip').val('4');
+		$('form#7').find('#id_chksum_ip').val('0x0');
+		$('form#7').find('#id_flags_ip').val('0x0');
+	
+		$('#div7').show();
+        });
+
+	$('#ether').off('click').on('click',function(e) {
+		
+           	$('#div8').show();
+	        $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+                $('#div4').hide();
+                $('#div5').hide();
+		$('#div6').hide();
+		$('#div7').hide();
+		$('#id_a').val('ether');
+		$('form#8').find('#id_packets_count').val('1000');
+		$('form#8').find('#id_srcmac_ether').val('00:50:56:01:02:03');
+		$('form#8').find('#id_dstmac_ether').val('00:50:56:04:05:06');
+		$('form#8').find('#id_type_ether').val('0x800');
+		$('form#8').find('#id_src_ip').val('192.168.10.10');
+		$('form#8').find('#id_dst_ip').val('192.168.10.20');
+	
+        });
+
+	$('#layer4-tcp').off('click').on('click',function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+                
+                $('#div5').hide();
+		$('#div6').hide();
+		$('#div7').hide();
+		$('#div8').hide();
+		$('#id_c').val('tcp');
+		$('form#4').find('#id_packets_count').val('1000');
+		$('form#4').find('#id_srcmac_ether').val('00:50:56:01:02:03');
+		$('form#4').find('#id_dstmac_ether').val('00:50:56:04:05:06');
+		$('form#4').find('#id_type_ether').val('0x800');
+		$('form#4').find('#id_src_ip').val('192.168.10.10');
+		$('form#4').find('#id_dst_ip').val('192.168.10.20');
+		$('form#4').find('#id_ihl_ip').val('5');
+		$('form#4').find('#id_len_ip').val('40');
+		$('form#4').find('#id_proto_ip').val('6');
+		$('form#4').find('#id_version_ip').val('4');
+		$('form#4').find('#id_chksum_ip').val('0x0');
+		$('form#4').find('#id_flags_ip').val('0x0');
+		$('form#4').find('#id_sport_tcp').val('21');
+		$('form#4').find('#id_dport_tcp').val('23');
+		$('form#4').find('#id_dataofs_tcp').val('5');
+		$('form#4').find('#id_chksum_tcp').val('0x0');
+		$('#div4').show();
+							
+        });
+	$('#layer4-udp').off('click').on('click',function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+                $('#div4').hide();
+               
+		$('#div6').hide();
+		$('#div7').hide();
+		$('#div8').hide();
+		$('#id_d').val('udp');
+	  	$('form#5').find('#id_packets_count').val('1000');
+                $('form#5').find('#id_srcmac_ether').val('00:50:56:01:02:03');
+                $('form#5').find('#id_dstmac_ether').val('00:50:56:04:05:06');
+                $('form#5').find('#id_type_ether').val('0x800');
+                $('form#5').find('#id_src_ip').val('192.168.10.10');
+                $('form#5').find('#id_dst_ip').val('192.168.10.20');
+                $('form#5').find('#id_ihl_ip').val('5');
+                $('form#5').find('#id_len_ip').val('28');
+                $('form#5').find('#id_proto_ip').val('17');
+                $('form#5').find('#id_version_ip').val('4');
+                $('form#5').find('#id_chksum_ip').val('0x0');
+                $('form#5').find('#id_flags_ip').val('0x0');
+                $('form#5').find('#id_sport_udp').val('21');
+                $('form#5').find('#id_dport_udp').val('23');
+                $('form#5').find('#id_len_udp').val('5');
+                $('form#5').find('#id_chksum_udp').val('0x0');
+                $('#div5').show();
+        });
+
+	$('#layer4-icmp').off('click').on('click',function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+                $('#div4').hide();
+                $('#div5').hide();
+		$('#div6').show();
+		$('#div7').hide();
+		$('#div8').hide();
+		$('#id_e').val('icmp');
+		$('form#6').find('#id_packets_count').val('1000');
+		$('form#6').find('#id_srcmac_ether').val('00:50:56:01:02:03');
+		$('form#6').find('#id_dstmac_ether').val('00:50:56:04:05:06');
+		$('form#6').find('#id_type_ether').val('0x800');
+		$('form#6').find('#id_src_ip').val('192.168.10.10');
+		$('form#6').find('#id_dst_ip').val('192.168.10.20');
+		$('form#6').find('#id_ihl_ip').val('5');
+		$('form#6').find('#id_len_ip').val('28');
+		$('form#6').find('#id_proto_ip').val('1');
+		$('form#6').find('#id_version_ip').val('4');
+		$('form#6').find('#id_chksum_ip').val('0x0');
+		$('form#6').find('#id_flags_ip').val('0x0');
+		$('form#6').find('#id_type_icmp').val('8');
+		$('form#6').find('#id_code_icmp').val('0');
+		$('form#6').find('#id_chksum_icmp').val('0x0');
+        });
+ 
+	$('#id_a').hide();
+        $('label[for=id_a]').hide();
+	$('#id_b').hide();
+        $('label[for=id_b]').hide();
+	$('#id_c').hide();
+        $('label[for=id_c]').hide();
+	$('#id_d').hide();
+        $('label[for=id_d]').hide();
+	$('#id_e').hide();
+        $('label[for=id_e]').hide();
+});
+
+</script> 
+</head>
+
+<body style="background-color:#5A5097">
+
+<div id="div-main">
+{{ errormsg }}
+<p><b><u>Select which layered packets you want to craft</u></b></p><br>
+<input type="radio" id="layer4" name="layer" value="layer4"/>
+<label for="layer4">Craft Layer 4 packets </label>
+
+<input type="radio" id="layer3" name="layer" value="layer3"/>
+<label for="layer3">Craft Layer 3 packets </label>
+
+<input type="radio" id="layer2" name="layer" value="layer2"/>
+<label for="layer2">Craft Layer 2 packets </label>
+
+</div>
+
+<div id="div1" style="display:none;">
+<p><b><u>Select which layer among layer4 </u></b></p>
+<input type="radio" id="layer4-tcp" name="layer" value="layer4-tcp"/>
+<b><label for="layer4-tcp">TCP layered</label></b> - Fields of Ether, IP and TCP layers can be modified
+<br><br>
+<input type="radio" id="layer4-udp" name="layer" value="layer4-udp"/>
+<b><label for="layer4-udp">UDP layered</label></b> - Fields of Ether, IP and UDP layers can be modified
+<br><br>
+<input type="radio" id="layer4-icmp" name="layer" value="layer4-icmp"/>
+<b><label for="layer4-icmp">ICMP layered</label></b> - Fields of Ether, IP and ICMP layers can be modified
+<br>
+</div>
+
+<div id="div2" style="display:none;">
+<p><b><u>Select which layer among layer3</u></b></p>
+<input type="radio" id="ip4" name="layer" value="ip4"/>
+<b><label for="ip4">IPV4</label></b> - Fields of Ether , IP layers can be modified
+</div>
+
+
+
+<div id="div3" style="display:none;">
+<p><b><u>Select which layer among layer2</u></b></p>
+<input type="radio" id="ether" name="layer" value="ether"/>
+<b><label for="ether">Ether</label></b> - Ether Fields can be modified
+</div>
+
+<div id="div4" style="display:none;">
+<p align="center" ><b><u>INSTRUCTIONS TO FILL THE FORM</u></b><br><br>
+1.specifying packets count is optional but all the other fields must have atleast one value<br><br>2.All Fields are filled with some default values, edit them to generate your own packets <br><br>3.Can specify either ranges or comma seperated values as inputs for Integer type Fields<br><br>4.Make sure you request more packets than the number of values you specified for each field
+</p>
+<p><b>Enter values:</b></p>
+<form id="4" action="result" method="POST">
+{% csrf_token %}
+<table>
+{{ formtcp.as_table }}
+</table>
+<input type="submit" id="submit" value="submit" />
+</form>
+</div>
+
+<div id="div5" style="display:none;">
+<p align="center" ><b><u>INSTRUCTIONS TO FILL THE FORM</u></b><br><br>
+1.specifying packets count is optional but all the other fields must have atleast one value<br><br>2.All Fields are filled with some default values, edit them to generate your own packets <br><br>3.Can specify either ranges or comma seperated values as inputs for Integer type Fields<br><br>4.Make sure you request more packets than the number of values you specified for each field
+</p>
+<p><b>Enter values:</b></p>
+<form id="5" action="result" method="POST">
+{% csrf_token %}
+<table>
+{{ formudp.as_table }}
+</table>
+<input type="submit" id="submit" value="submit" />
+</form>
+</div>
+
+<div id="div6" style="display:none;">
+<p align="center" ><b><u>INSTRUCTIONS TO FILL THE FORM</u></b><br><br>
+1.specifying packets count is optional but all the other fields must have atleast one value<br><br>2.All Fields are filled with some default values, edit them to generate your own packets <br><br>3.Can specify either ranges or comma seperated values as inputs for Integer type Fields<br><br>4.Make sure you request more packets than the number of values you specified for each field
+</p>
+<p><b>Enter values:</b></p>
+<form id="6" action="result" method="POST">
+{% csrf_token %}
+<table>
+{{ formicmp.as_table }}
+</table>
+
+<input type="submit" id="submit" value="submit" />
+</form>
+</div>
+
+<div id="div7" style="display:none;">
+<p align="center" ><b><u>INSTRUCTIONS TO FILL THE FORM</u></b><br><br>
+1.specifying packets count is optional but all the other fields must have atleast one value<br><br>2.All Fields are filled with some default values, edit them to generate your own packets <br><br>3.Can specify either ranges or comma seperated values as inputs for Integer type Fields<br><br>4.Make sure you request more packets than the number of values you specified for each field
+</p>
+<p><b>Enter values:</b></p>
+<form id="7" action="result" method="POST">
+
+{% csrf_token %}
+<table>
+{{ formip.as_table }}
+</table>
+
+<input type="submit" id="submit" value="submit" />
+</form>
+</div>
+
+
+<div id="div8" style="display:none;">
+<p align="center" ><b><u>INSTRUCTIONS TO FILL THE FORM</u></b><br><br>
+1.specifying packets count is optional but all the other fields must have atleast one value<br><br>2.All Fields are filled with some default values, edit them to generate your own packets <br><br>3.Can specify either ranges or comma seperated values as inputs for Integer type Fields<br><br>4.Make sure you request more packets than the number of values you specified for each field
+</p>
+<p><b>Enter values:</b></p>
+<form id="8" action="result" method="POST">
+{% csrf_token %}
+<table>
+{{ formether.as_table }}
+</table>
+<input type="submit" id="submit" value="submit" />
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!--  File owner : Manoj Tammali
+      Description : html file displaying the main user option,used jquery
+       
+-->
+<html>
+<head>
+<h2 style="color:white" align="center">PACKET GENERATOR</h2><br><br>
+<script src="{{ STATIC_URL }}/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+	
+	$('#pickup').off('click').on('click',function(e) {
+		$('#div1').show();
+		$('#div2').hide();
+		$('#div3').hide();
+	});
+	$('#Input').off('click').on('click',function(e) {
+		$('#div1').hide();
+		$('#div2').show();
+		$('#div3').hide();
+	});
+	$('#craft').off('click').on('click',function(e) {
+		$('#div1').hide();
+		$('#div2').hide();
+		$('#div3').show();
+	});
+
+});
+
+</script> 
+ 
+</head>
+<body align="center" style="background-color:#731D1D">
+
+<div id="div-main" align="center">
+<p style="color:white" align="center"><b><u>Select the operation:</u></b></p><br> 
+<input type="radio" id="pickup"  name="option" value="pickup"/>
+<label for="pickup" style="color:white"> <u>Pickup a pcap</u> - Use any pcap from repository </label>
+<br><br><br>
+<input type="radio" id="Input" name="option" value="Input"/> 
+<label for="Input" style="color:white"><u>Input a pcap</u> - Add your valid cap file to repository</label>
+<br><br><br>
+<input type="radio" id="craft" name="option" value="craft"/>
+<label for="craft" style="color:white"><u>Craft packets</u> - Craft your own packets in a flexible way</label>
+</div>
+
+<div id="div1" style="display:none" align="center">
+<form action="index">
+<br>
+<input type="submit" id="submit" value="Go" />
+</form>
+</div>
+
+<div id="div2" style="display:none;" align="center">
+<form action="upload">
+<br>
+<input type="submit" id="submit" value="Go" />
+</form>
+</div>
+
+<div id="div3" style="display:none;" align="center">
+<form action="craft">
+<br>
+<input type="submit" id="submit" value="Go" />
+</form>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,570 @@
+<!--    File owner : Manoj Tammali 
+	Description : html form taking input regarding pick up pcap option
+-->
+<html>
+<head>
+<script src="{{ STATIC_URL }}/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+	
+	$('#Layer-pcap').off('click').on('click',function(e) {
+		$('#div1').show();
+		$('#div2').hide();
+		$('#div3').hide();
+		$('#div4').hide();
+		$('#div5').hide();
+		$('#div100').hide();
+		
+	});
+
+	$('#Attacks-pcap').off('click').on('click', function(e) {
+		$('#div1').hide();
+		$('#div2').show();
+		$('#div3').hide();
+		$('#div4').hide();
+		$('#div5').hide();
+		$('#div100').hide();
+		
+	});
+
+	$('#Ether').off('click').on('click', function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+		$('#div3').show();
+		$('#div4').hide();
+                $('#div5').hide();
+		$('#div100').hide();
+		
+        });
+
+	 $('#EtherNone').off('click').on('click', function(e) {
+
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+		$('#div4').hide();
+		$('#div5').hide();
+                $('#div100').show();
+                $('#id_destination').val('etheronly');
+		$('#id_sourceip').val('192.168.10.10');
+		$('#id_destip').val('192.168.10.20');
+		$('#id_sourcemac').val('00:50:56:01:02:03');
+		$('#id_destmac').val('00:50:56:04:05:06');
+		
+		$('#id_srcport').hide();
+        	$('label[for=id_srcport]').hide();
+		$('#id_dstport').hide();
+        	$('label[for=id_dstport]').hide();
+        });      
+
+	$('#EtherIPV4').off('click').on('click', function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+		$('#div4').show();
+                $('#div5').hide();
+		$('#div100').hide();
+		
+        });      
+	$('#EtherUDP').off('click').on('click', function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+		$('#div4').hide();
+                $('#div5').hide();
+                $('#div100').show();
+		$('#id_destination').val('etherudp');
+                $('#id_sourceip').val('192.168.10.10');
+                $('#id_destip').val('192.168.10.20');
+                $('#id_sourcemac').val('00:50:56:01:02:03');
+                $('#id_destmac').val('00:50:56:04:05:06');
+		$('#id_srcport').val('8826');
+		$('#id_dstport').val('9826');
+		
+                $('#id_srcport').show();
+                $('label[for=id_srcport]').show();
+                $('#id_dstport').show();
+                $('label[for=id_dstport]').show();
+
+
+        });
+
+
+        $('#EtherTCP').off('click').on('click', function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+		$('#div4').hide();
+                $('#div5').hide();
+		
+                $('#div100').show();
+		$('#id_destination').val('ethertcp');
+                $('#id_sourceip').val('192.168.10.10');
+                $('#id_destip').val('192.168.10.20');
+                $('#id_sourcemac').val('00:50:56:01:02:03');
+                $('#id_destmac').val('00:50:56:04:05:06');
+		$('#id_srcport').val('8826');
+		$('#id_dstport').val('9826');	
+     	        $('#id_srcport').show();
+                $('label[for=id_srcport]').show();
+                $('#id_dstport').show();
+                $('label[for=id_dstport]').show();
+
+        });
+        $('#EtherICMP').off('click').on('click', function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+		$('#div4').hide();
+                $('#div5').hide();
+		
+                $('#div100').show();
+		$('#id_destination').val('ethericmp');
+                $('#id_sourceip').val('192.168.10.10');
+                $('#id_destip').val('192.168.10.20');
+                $('#id_sourcemac').val('00:50:56:01:02:03');
+                $('#id_destmac').val('00:50:56:04:05:06');
+
+                $('#id_srcport').hide();
+                $('label[for=id_srcport]').hide();
+                $('#id_dstport').hide();
+                $('label[for=id_dstport]').hide();
+        });
+        $('#security').off('click').on('click', function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+		$('#div4').hide();
+		$('#div5').hide();
+                $('#div100').show();
+		$('#id_destination').val('security');
+                $('#id_sourceip').val('192.168.10.10');
+                $('#id_destip').val('192.168.10.20');
+                $('#id_sourcemac').val('00:50:56:01:02:03');
+                $('#id_destmac').val('00:50:56:04:05:06');
+
+		
+                $('#id_srcport').hide();
+                $('label[for=id_srcport]').hide();
+                $('#id_dstport').hide();
+                $('label[for=id_dstport]').hide();
+
+        });
+
+ 	$('#IPoptions').off('click').on('click', function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+                $('#div4').hide();
+                $('#div5').hide();
+                $('#div100').show();
+                $('#id_destination').val('IPoptions');
+                $('#id_sourceip').val('192.168.10.10');
+                $('#id_destip').val('192.168.10.20');
+                $('#id_sourcemac').val('00:50:56:01:02:03');
+                $('#id_destmac').val('00:50:56:04:05:06');
+
+		
+                $('#id_srcport').hide();
+                $('label[for=id_srcport]').hide();
+                $('#id_dstport').hide();
+                $('label[for=id_dstport]').hide();
+        });
+
+	 $('#arpcache').off('click').on('click', function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+                $('#div4').hide();
+                $('#div5').hide();
+                $('#div100').show();
+		$('#id_destination').val('ARP');
+                $('#id_sourceip').val('Enter Gateway IP');
+                $('#id_destip').val('Enter Target IP');
+                $('#id_sourcemac').val('Enter Your MAC');
+                $('#id_destmac').val('Enter Target MAC');
+
+		$('#id_srcport').hide();
+                $('label[for=id_srcport]').hide();
+                $('#id_dstport').hide();
+                $('label[for=id_dstport]').hide();
+
+                
+
+        });
+	
+	$('#TCP').off('click').on('click', function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+                $('#div4').hide();
+                $('#div5').hide();
+                $('#div100').show();
+                $('#id_destination').val('TCP');
+                $('#id_sourceip').val('192.168.10.10');
+                $('#id_destip').val('192.168.10.20');
+                $('#id_sourcemac').val('00:50:56:01:02:03');
+                $('#id_destmac').val('00:50:56:04:05:06');
+		$('#id_srcport').val('8826');
+		$('#id_dstport').val('9826');
+	
+		$('#id_srcport').show();
+                $('label[for=id_srcport]').show();
+                $('#id_dstport').show();
+                $('label[for=id_dstport]').show();
+
+        });
+	
+	$('#UDP').off('click').on('click', function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+                $('#div4').hide();
+                $('#div5').hide();
+                $('#div100').show();
+                $('#id_destination').val('UDP');
+	        $('#id_sourceip').val('192.168.10.10');
+                $('#id_destip').val('192.168.10.20');
+                $('#id_sourcemac').val('00:50:56:01:02:03');
+                $('#id_destmac').val('00:50:56:04:05:06');
+		$('#id_srcport').val('8826');
+		$('#id_dstport').val('9826');
+	
+        	$('#id_srcport').show();
+                $('label[for=id_srcport]').show();
+                $('#id_dstport').show();
+                $('label[for=id_dstport]').show();
+
+        });
+
+	$('#ICMP').off('click').on('click', function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+                $('#div4').hide();
+                $('#div5').hide();
+                $('#div100').show();
+                $('#id_destination').val('ICMP');
+		$('#id_sourceip').val('192.168.10.10');
+                $('#id_destip').val('192.168.10.20');
+                $('#id_sourcemac').val('00:50:56:01:02:03');
+                $('#id_destmac').val('00:50:56:04:05:06');
+
+
+	        $('#id_srcport').hide();
+                $('label[for=id_srcport]').hide();
+                $('#id_dstport').hide();
+                $('label[for=id_dstport]').hide();
+        });
+   	$('#EtherIPV4None').off('click').on('click', function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+                $('#div4').hide();
+                $('#div5').hide();
+                $('#div100').show();
+                $('#id_destination').val('EtherIPV4');
+		$('#id_sourceip').val('192.168.10.10');
+                $('#id_destip').val('192.168.10.20');
+                $('#id_sourcemac').val('00:50:56:01:02:03');
+                $('#id_destmac').val('00:50:56:04:05:06');
+
+		
+                $('#id_srcport').hide();
+                $('label[for=id_srcport]').hide();
+                $('#id_dstport').hide();
+                $('label[for=id_dstport]').hide();
+
+        });
+	$('#EtherIPV4ICMP').off('click').on('click', function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+                $('#div4').hide();
+                $('#div5').hide();
+                $('#div100').show();
+                $('#id_destination').val('EtherIPV4ICMP');
+                $('#id_sourceip').val('192.168.10.10');
+                $('#id_destip').val('192.168.10.20');
+                $('#id_sourcemac').val('00:50:56:01:02:03');
+                $('#id_destmac').val('00:50:56:04:05:06');
+
+	
+                $('#id_srcport').hide();
+                $('label[for=id_srcport]').hide();
+                $('#id_dstport').hide();
+                $('label[for=id_dstport]').hide();
+
+        });
+
+	    $('#EtherIPV4TCP').off('click').on('click', function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+                $('#div4').hide();
+                $('#div5').hide();
+                $('#div100').show();
+                $('#id_destination').val('EtherIPV4TCP');
+                $('#id_sourceip').val('192.168.10.10');
+                $('#id_destip').val('192.168.10.20');
+                $('#id_sourcemac').val('00:50:56:01:02:03');
+                $('#id_destmac').val('00:50:56:04:05:06');
+		$('#id_srcport').val('8826');
+		$('#id_dstport').val('9826');
+		
+		$('#id_srcport').show();
+                $('label[for=id_srcport]').show();
+                $('#id_dstport').show();
+                $('label[for=id_dstport]').show();
+
+        });
+
+	    $('#EtherIPV4UDP').off('click').on('click', function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+                $('#div4').hide();
+                $('#div5').hide();
+                $('#div100').show();
+                $('#id_destination').val('EtherIPV4UDP');
+                $('#id_sourceip').val('192.168.10.10');
+                $('#id_destip').val('192.168.10.20');
+                $('#id_sourcemac').val('00:50:56:01:02:03');
+                $('#id_destmac').val('00:50:56:04:05:06');
+		$('#id_srcport').val('8826');
+		$('#id_dstport').val('9826');
+	
+		$('#id_srcport').show();
+                $('label[for=id_srcport]').show();
+                $('#id_dstport').show();
+                $('label[for=id_dstport]').show();
+
+        });
+	     $('#IPV4').off('click').on('click', function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+                $('#div4').hide();
+                $('#div5').show();
+                $('#div100').hide();
+		
+        });
+
+	  $('#IPV4None').off('click').on('click', function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+                $('#div4').hide();
+                $('#div5').hide();
+                $('#div100').show();
+                $('#id_destination').val('IPV4');
+                $('#id_sourceip').val('192.168.10.10');
+                $('#id_destip').val('192.168.10.20');
+                $('#id_sourcemac').val('00:50:56:01:02:03');
+                $('#id_destmac').val('00:50:56:04:05:06');
+
+		
+                $('#id_srcport').hide();
+                $('label[for=id_srcport]').hide();
+                $('#id_dstport').hide();
+                $('label[for=id_dstport]').hide();
+
+        });
+ 	$('#IPV4TCP').off('click').on('click', function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+                $('#div4').hide();
+                $('#div5').hide();
+                $('#div100').show();
+                $('#id_destination').val('IPV4TCP');
+                $('#id_sourceip').val('192.168.10.10');
+                $('#id_destip').val('192.168.10.20');
+                $('#id_sourcemac').val('00:50:56:01:02:03');
+                $('#id_destmac').val('00:50:56:04:05:06');
+		$('#id_srcport').val('8826');
+		$('#id_dstport').val('9826');
+		
+		$('#id_srcport').show();
+                $('label[for=id_srcport]').show();
+                $('#id_dstport').show();
+                $('label[for=id_dstport]').show();
+
+        });
+
+	 $('#IPV4UDP').off('click').on('click', function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+                $('#div4').hide();
+                $('#div5').hide();
+                $('#div100').show();
+                $('#id_destination').val('IPV4UDP');
+                $('#id_sourceip').val('192.168.10.10');
+                $('#id_destip').val('192.168.10.20');
+                $('#id_sourcemac').val('00:50:56:01:02:03');
+                $('#id_destmac').val('00:50:56:04:05:06');
+		$('#id_srcport').val('8826');
+		$('#id_dstport').val('9826');
+		
+		$('#id_srcport').show();
+                $('label[for=id_srcport]').show();
+                $('#id_dstport').show();
+                $('label[for=id_dstport]').show();
+
+        })
+	 $('#IPV4ICMP').off('click').on('click', function(e) {
+                $('#div1').hide();
+                $('#div2').hide();
+                $('#div3').hide();
+                $('#div4').hide();
+                $('#div5').hide();
+                $('#div100').show();
+                $('#id_destination').val('IPV4ICMP');
+                $('#id_sourceip').val('192.168.10.10');
+                $('#id_destip').val('192.168.10.20');
+                $('#id_sourcemac').val('00:50:56:01:02:03');
+                $('#id_destmac').val('00:50:56:04:05:06');
+
+		
+                $('#id_srcport').hide();
+                $('label[for=id_srcport]').hide();
+                $('#id_dstport').hide();
+                $('label[for=id_dstport]').hide();
+
+        });
+
+	$('#id_destination').hide();
+	$('label[for=id_destination]').hide(); 
+});
+
+</script> 
+ 
+</head>
+<body style="background-color:#999999">
+
+<div id="div-main">
+<b><p><u>Select the Operation:</u></p> 
+<input type="radio" id="Layer-pcap"  name="layer" value="Layer based pcaps"/>
+<label for="Layer-pcap">Layer based pcaps</label></b> - Pcaps of all possible combinations of layers
+&nbsp;&nbsp;&nbsp;
+<input type="radio" id="Attacks-pcap" name="layer" value="Attacks based pcaps"/>
+<b><label for="Attacks-pcap">Special case pcaps</label></b> - Pcaps of already existing issues
+
+</div>
+
+
+<div id="div1" style="display:none;">
+<p><b><u> Select Layer1 </u></b></p>
+<input type="radio" id="Ether" name="layer" value="Ether"/>
+<b><label for="Ether">Ether</label></b> - Pcap with all possible combinations of Type field in Ether 
+<br><br>
+<input type="radio" id="IPV4" name="layer" value="IPV4"/>
+<b><label for="IPV4">IPV4</label></b> - Pcap with all possible combinations of Version, Proto, ihl, Len, Chksum fields in IP layer
+<br><br>
+<input type="radio" id="TCP" name="layer" value="TCP"/>
+<b><label for="TCP">TCP</label></b> - Pcap with all possible combinations of Dataofs, Chksum, Flags fields in TCP layer
+<br><br>
+<input type="radio" id="UDP" name="layer" value="UDP"/>
+<b><label for="UDP">UDP</label></b> - Pcap with all possible combinations of Len, Chksum fields in UDP layer
+<br><br>
+<input type="radio" id="ICMP" name="layer" value="ICMP"/>
+<b><label for="ICMP">ICMP</label></b> - Pcap with all possible combinations of Type, Code, Chksum fields in ICMP layer
+<br>
+
+</div>
+
+
+
+<div id="div2" style="display:none;">
+<p><b><u> Select from choice:</u></b> </p>
+<input type="radio" id="arpcache"  name="layer" value="arpcache pcap"/>
+<b><label for="arpcache">ARP cache poisoning</label></b> - Pcap to perform ARP attack
+<br><br>
+<input type="radio" id="IPoptions"  name="layer" value="IPoptions pcap"/>
+<b><label for="IPoptions">IP options validation</label></b> - Pcap with IP options field manipulated
+<br><br>
+<input type="radio" id="bpdu"  name="layer" value="BPDU pcap"/>
+<b><label for="bpdu">BPDU packets (Not included yet)</label></b> - Pcap with BPDU packets  
+<br><br>
+<input type="radio" id="security"  name="layer" value="security pcap"/> 
+<b><label for="security">other security related</label></b> - Pcap with other known security issues 
+</div>
+
+
+
+
+<div id="div3" style="display:none;">
+<p><b><u>Select Layer1-Layer2</u></b></p>
+<input type="radio" id="EtherNone" name="layer" value="Ether+None"/>
+<b><label for="EtherNone">Ether+None</label></b> - Pcap with all possible combinations of Type field in Ether layer
+<br><br>
+<input type="radio" id="EtherIPV4" name="layer" value="Ether+IPV4"/>
+<b><label for="EtherIPV4">Ether+IPV4</label></b> - Pcap with all possible combinations of Type field in Ether layer + Proto, Version, ihl, Len, Chksum fields in IP layer
+<br><br>
+<input type="radio" id="EtherTCP" name="layer" value="Ether+TCP"/>
+<b><label for="EtherTCP">Ether+TCP</label></b> - Pcap with all possible combinations of Type field in Ether layer + Dataofs, Chksum, Flags fields in TCP layer
+<br><br>
+<input type="radio" id="EtherICMP" name="layer" value="Ether+ICMP"/>
+<b><label for="EtherICMP">Ether+ICMP</label></b> - Pcap with all possible combinations of Type field in Ether layer + Code, Chksum, Type fields in ICMP layer 
+<br><br>
+<input type="radio" id="EtherUDP" name="layer" value="Ether+UDP"/>  
+<b><label for="EtherUDP">Ether+UDP</label></b> - Pcap with all possible combinations of Type field in Ether layer + Len, Chksum fields in UDP layer
+</div>
+
+<div id="div4" style="display:none;">
+<p><b><u>Select Layer1-Layer2-Layer3</u></b></p>
+
+<input type="radio" id="EtherIPV4None" name="layer" value="Ether+IPV4+None"/>
+<b><label for="EtherIPV4None">Ether+IPV4+None</label></b> - Pcap with all possible combinations of Ether Type + Proto, Version, ihl, Len, Chksum fields in IP
+<br><br>
+<input type="radio" id="EtherIPV4TCP" name="layer" value="Ether+IPV4+TCP"/>
+<b><label for="EtherIPV4TCP">Ether+IPV4+TCP</label></b> -Pcap with all possible combinations of Ether Type + Proto, Version, ihl, Len, Chksum fields in IP + Dataofs, Chksum fields in TCP
+<br><br>
+<input type="radio" id="EtherIPV4ICMP" name="layer" value="Ether+IPV4+ICMP"/>
+<b><label for="EtherIPV4ICMP">Ether+IPV4+ICMP</label></b> -Pcap with all possible combinations of Ether Type + Proto, Version, ihl,Len, Chksum fields in IP + Type, Code, Chksum fields in ICMP
+<br><br>
+<input type="radio" id="EtherIPV4UDP" name="layer" value="Ether+IPV4+UDP"/>
+<b><label for="EtherIPV4UDP">Ether+IPV4+UDP</label></b> - Pcap with all possible combinations of Ether Type + Proto, Version, ihl, Len, Chksum fields in IP + Len, Chksum fields in UDP
+
+</div>
+
+
+<div id="div5" style="display:none;">
+<p><b><u>Select Layer2-Layer3</u></b></p>
+
+<input type="radio" id="IPV4None" name="layer" value="IPV4+None"/>
+<b><label for="IPV4None">IPV4+None</label></b> - Pcap with all possible combinations of Proto, Version, ihl, Len, Chksum fields in IP layer
+<br><br>
+<input type="radio" id="IPV4TCP" name="layer" value="IPV4+TCP"/>
+<b><label for="IPV4TCP">IPV4+TCP</label></b> - Pcap with all possible combinations of Proto, Version, ihl, Len, Chksum fields in IP layer + Dataofs, Chksum fields in TCP layer
+<br><br>
+<input type="radio" id="IPV4ICMP" name="layer" value="IPV4+ICMP"/>
+<b><label for="IPV4ICMP">IPV4+ICMP</label></b> - Pcap with all possible combinations of Proto, Version, ihl, Len, Chksum fields in IP layer + Type, Code, Chksum fields in ICMP layer
+<br><br>
+<input type="radio" id="IPV4UDP" name="layer" value="IPV4+UDP"/>
+<b><label for="IPV4UDP">IPV4+UDP</label></b> - Pcap with all possible combinations of Proto, Version, ihl, Len, Chksum fields in IP layer + Len, Chksum fields in UDP layer
+
+</div>
+
+
+<div id="div100" style="display:none;">
+<p align="center"><b><u>INSTRUCTIONS TO FILL THE FORM</u></b><br><br>
+1.All Fields are filled with some default values<br><br>2.Edit the field values as per your requirement and submit the form
+</p>
+<p><b><u>Enter values:</u></b></p>
+<form id="getform" action="execute1" method="POST">
+{% csrf_token %}
+
+<table>
+	{{ form.as_table }}
+</table>
+
+<input type="submit" id="submit" value="submit" />
+</form>
+</div>
+
+
+</body>
+</html>
